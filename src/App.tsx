@@ -1,56 +1,29 @@
 import React from 'react';
 import './App.css';
 import Header from "./components/header/Header";
-import Snippet from "./components/snippet/Snippet";
+import LandingSnippet from "./components/landingSnippet/LandingSnippet";
 import Footer from "./components/footer/Footer";
+import featuredSnippets from './assets/data/landingSnippet.json'; // import JSON directly
+
+interface SnippetData {
+    imageUrl: string;
+    title: string;
+    description: string;
+    pageUrl: string;
+}
 
 const App: React.FC = () => {
-    const pages = [
-        {title: 'Home', path: '/'},
-        {title: 'Services', path: '/services'},
-        {title: 'Contact', path: '/contact'}
-    ];
-
-    const featuredSnippets = [
-        {
-            imageUrl: 'path/to/image1.jpg',
-            title: 'Service 1',
-            description: 'Description of service 1',
-            details: 'Important details about this service',
-            pageUrl: '/service1'
-        },
-        {
-            imageUrl: 'path/to/image1.jpg',
-            title: 'Service 1',
-            description: 'Description of service 1',
-            details: 'Important details about this service',
-            pageUrl: '/service1'
-        },
-        {
-            imageUrl: 'path/to/image1.jpg',
-            title: 'Service 1',
-            description: 'Description of service 1',
-            details: 'Important details about this service',
-            pageUrl: '/service1'
-        },
-        {
-            imageUrl: 'path/to/image1.jpg',
-            title: 'Service 1',
-            description: 'Description of service 1',
-            details: 'Important details about this service',
-            pageUrl: '/service1'
-        }
-    ];
+    const pages = [{ title: 'Home', path: '/' }];
 
     return (
         <div className="app">
-            <Header pages={pages}/>
             <main className="main-content">
-                {featuredSnippets.map((snippet, index) => (
-                    <Snippet key={index} {...snippet} />
+                <Header pages={pages} />
+                {featuredSnippets.map((snippet: SnippetData, index: number) => (
+                    <LandingSnippet key={index} {...snippet} />
                 ))}
             </main>
-            <Footer/>
+            <Footer />
         </div>
     );
 };

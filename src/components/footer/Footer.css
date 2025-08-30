@@ -1,7 +1,11 @@
 .footer {
     text-align: center;
-    padding: 2rem;
+    padding: 0.1rem;
     background-color: #343a40;
     color: white;
     margin-top: auto;
+}
+
+.newFolderLink{
+    text-decoration: none;
 }
