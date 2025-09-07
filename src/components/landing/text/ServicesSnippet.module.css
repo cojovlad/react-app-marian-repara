@@ -1,0 +1,159 @@
+.servicesSnippet {
+    padding: 2rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.servicesPreview {
+    background: #111;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 6px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.aboutIntro p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #e6e6e6;
+}
+
+.aboutMission h2,
+.aboutServices h2 {
+    margin-top: 0.5rem;
+    color: #fff;
+}
+
+.aboutMission p,
+.aboutServices ul {
+    color: #d0d0d0;
+    margin: 0.5rem 0;
+}
+
+.aboutServices ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+}
+
+.moreText {
+    margin-top: 0.5rem;
+}
+
+/* CTA area inside preview */
+.aboutCta {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+.projectButton {
+    background: #c0392b;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* the "vezi lista" button */
+.servicesLink,
+.openServices {
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.9rem;
+    background: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* overlay backdrop */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    z-index: 1000;
+}
+
+/* actual modal content */
+.overlayContent {
+    background: #fff;
+    color: #222;
+    max-width: 1000px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 10px;
+    padding: 1.75rem;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* close button */
+.closeBtn {
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+    background: transparent;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+/* two-column services grid inside overlay */
+.servicesGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.servicesGrid ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.servicesGrid ul li {
+    margin-bottom: 1rem;
+}
+
+.servicesGrid strong {
+    color: #c0392b;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* nested lists style */
+.servicesGrid ul ul {
+    list-style: disc;
+    padding-left: 1rem;
+    color: #333;
+    margin-top: 0.5rem;
+}
+
+.servicesGrid ul ul li {
+    margin-bottom: 0.35rem;
+}
+
+/* responsive: collapse to 1 column */
+@media (max-width: 900px) {
+    .servicesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .overlayContent {
+        padding: 1rem;
+    }
+}

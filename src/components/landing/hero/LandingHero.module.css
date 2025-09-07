@@ -1,6 +1,5 @@
-.snippet {
+.landingSnippet {
     position: relative;
-    width: 100%;
     min-height: 100vh;
     overflow: hidden;
     display: flex;
@@ -8,43 +7,37 @@
     justify-content: center;
     align-items: center;
     color: black;
+    padding: 3rem 2rem;
 }
 
-.snippet-image {
+.landingImage {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* keeps aspect ratio, crops */
-    z-index: -1; /* put behind text */
+    object-fit: cover;
+    z-index: -1;
 }
 
-.snippet-title {
+.landingTitle {
     font-size: 3rem;
     font-weight: bold;
     margin: 1rem 0;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    color: #fff;
 }
 
-.snippet-description {
+.landingDescription {
     text-align: center;
     width: 40%;
     font-size: 1.2rem;
     margin-bottom: 1rem;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    color: #fff;
 }
 
-.snippet-details {
-    max-width: 600px;
-    padding: 1rem;
-    background: rgba(0,0,0,0.5);
-    border-radius: 6px;
-    margin: 1.5rem 0;
-    text-align: center;
-}
-
-.snippet-button {
+.landingButton {
     display: inline-block;
     padding: 0.8rem 2rem;
     background-color: #d9534f;
@@ -55,7 +48,6 @@
     transition: background-color 0.3s ease;
 }
 
-.snippet-button:hover {
+.landingButton:hover {
     background-color: #c9302c;
 }
-

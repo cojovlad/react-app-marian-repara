@@ -1,8 +1,8 @@
 [
-{
-  "imageUrl": "./assets/images/display1THREE.png",
-  "title": "Marian Repară",
-  "description": "Singurul meșter de încredere din Suceava si din imprejurimi, deschis la orice incercare.",
-  "pageUrl": "/service1"
-}
+  {
+    "imageUrl": "./assets/images/display1FOUR.jpg",
+    "title": "Marian Repară",
+    "description": "Singurul meșter de încredere din Suceava si din imprejurimi, deschis la orice incercare.",
+    "pageUrl": "/"
+  }
 ]

@@ -1,9 +1,17 @@
 import React from 'react';
 import './App.css';
 import Header from "./components/header/Header";
-import LandingSnippet from "./components/landingSnippet/LandingSnippet";
 import Footer from "./components/footer/Footer";
-import featuredSnippets from './assets/data/landingSnippet.json'; // import JSON directly
+import featuredSnippets from './assets/data/landingSnippet.json';
+import whyChooseMarianSnippet from './assets/data/whyChooseMarianSnippet.json';
+import LandingHero from "./components/landing/hero/LandingHero";
+import ServicesSnippet from "./components/landing/text/ServicesSnippet";
+import BenefitsHero from "./components/benefits/hero/BenefitsHero";
+import BenefitsSnippet from "./components/benefits/text/BenefitsSnippet";
+import ServiceAreaHero from "./components/area/hero/ServiceAreaHero";
+import ServiceAreaSnippet from "./components/area/text/ServiceAreaSnippet";
+import PricingSnippet from "./components/pricing/text/PricingSnippet";
+import PricingHero from "./components/pricing/hero/PricingHero";
 
 interface SnippetData {
     imageUrl: string;
@@ -13,17 +21,26 @@ interface SnippetData {
 }
 
 const App: React.FC = () => {
-    const pages = [{ title: 'Home', path: '/' }];
+    const pages = [{title: 'Home', path: '/'}];
 
     return (
         <div className="app">
             <main className="main-content">
-                <Header pages={pages} />
+                <Header pages={pages}/>
                 {featuredSnippets.map((snippet: SnippetData, index: number) => (
-                    <LandingSnippet key={index} {...snippet} />
+                    <LandingHero key={index} {...snippet} />
                 ))}
+                <ServicesSnippet/>
+                {whyChooseMarianSnippet.map((snippet: SnippetData, index: number) => (
+                    <BenefitsHero key={index} {...snippet} />
+                ))}
+                <BenefitsSnippet/>
+                <ServiceAreaHero/>
+                <ServiceAreaSnippet/>
+                <PricingHero/>
+                <PricingSnippet/>
             </main>
-            <Footer />
+            <Footer/>
         </div>
     );
 };

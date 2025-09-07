@@ -1,6 +1,6 @@
-import React from 'react';
-import './Header.css';
-import { Link } from "react-router-dom";
+import React from "react";
+import {Link} from "react-router-dom";
+import styles from "./Header.module.css";
 
 interface HeaderProps {
     pages: Array<{ title: string; path: string }>;
@@ -8,19 +8,18 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({pages}) => {
     return (
-        <header className="header">
-
+        <header className={styles.header}>
             <Link to="/">
                 <img
-                    className="logo"
+                    className={styles.logo}
                     src="assets/images/img.png"
                     alt="header-logo"
                 />
             </Link>
 
-            <nav className="nav">
+            <nav className={styles.nav}>
                 {pages.map((page, index) => (
-                    <a key={index} href={page.path} className="nav-link">
+                    <a key={index} href={page.path} className={styles.navLink}>
                         {page.title}
                     </a>
                 ))}

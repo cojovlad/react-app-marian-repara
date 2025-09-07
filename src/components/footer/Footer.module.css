@@ -1,0 +1,17 @@
+.footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #1a1a1a;
+    color: white;
+    margin-top: auto;
+}
+
+.newFolderLink {
+    text-decoration: none;
+    color: #cfcfcf;
+}
+
+.newFolderLink:hover {
+    color: #fff;
+    text-decoration: underline;
+}
