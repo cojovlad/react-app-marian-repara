@@ -8,16 +8,23 @@ interface Props {
 }
 
 const ServiceAreaHero: React.FC<Props> = ({
-                                                     imageUrl = "/assets/images/display1SEVEN.png",
-                                                     title = "ARIA DE SERVICIU — SUCEAVA",
-                                                 }) => {
+                                              imageUrl = "/assets/images/display1SEVEN.png",
+                                              title = "ARIA DE SERVICIU — SUCEAVA",
+                                          }) => {
     return (
-        <section className={styles.heroSnippet} aria-labelledby="service-area-title">
-            <img src={imageUrl} alt="Suceava" className={styles.heroImage}/>
+        <section
+            className={styles.heroSnippet}
+            aria-labelledby="service-area-title"
+            style={{backgroundImage: `url(${imageUrl})`}}
+        >
             <div className={styles.heroOverlay}>
-                <h2 id="service-area-title" className={styles.heroTitle}>{title}</h2>
+                <h2 id="service-area-title" className={styles.heroTitle}>
+                    {title}
+                </h2>
                 <p className={styles.heroSubtitle}>
-                    Suntem mândri să oferim servicii profesionale de meșterie pentru municipiul <strong>Suceava</strong> și localitățile din jur. Intervenții rapide, montaj, reparații și mici renovări — totul executat cu atenție.
+                    Suntem mândri să oferim servicii profesionale de meșterie pentru
+                    municipiul <strong>Suceava</strong> și localitățile din jur. Intervenții rapide, montaj,
+                    reparații și mici renovări — totul executat cu atenție.
                 </p>
             </div>
         </section>

@@ -9,20 +9,24 @@ interface SnippetProps {
 }
 
 const LandingHero: React.FC<SnippetProps> = ({
-                                                    imageUrl,
-                                                    title,
-                                                    description,
-                                                    pageUrl
-                                                }) => {
+                                                 imageUrl,
+                                                 title,
+                                                 description,
+                                                 pageUrl,
+                                             }) => {
     return (
-        <div className={styles.landingSnippet}>
-            <img src={imageUrl} alt={title} className={styles.landingImage}/>
-            <h2 className={styles.landingTitle}>{title}</h2>
-            <p className={styles.landingDescription}>{description}</p>
-            <a href={pageUrl} className={styles.landingButton}>
-                Fa o programare!
-            </a>
-        </div>
+        <section
+            className={styles.landingSnippet}
+            style={{backgroundImage: `url(${imageUrl})`}}
+        >
+            <div className={styles.landingOverlay}>
+                <h2 className={styles.landingTitle}>{title}</h2>
+                <p className={styles.landingDescription}>{description}</p>
+                <a href={pageUrl} className={styles.landingButton}>
+                    Fa o programare!
+                </a>
+            </div>
+        </section>
     );
 };
 

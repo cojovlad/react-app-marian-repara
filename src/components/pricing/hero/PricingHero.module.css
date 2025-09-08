@@ -1,34 +1,43 @@
 .heroSnippet {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    height: 420px;
     margin-bottom: 1.5rem;
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.heroImage {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.55);
+.heroSnippet::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
 }
 
 .heroOverlay {
-    position: absolute;
-    inset: 0;
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 2rem;
-    color: #fff;
 }
 
 .heroTitle {
     font-size: 2.2rem;
-    margin-bottom: .5rem;
-    letter-spacing: .4px;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.4px;
 }
 
 .heroSubtitle {
@@ -39,7 +48,7 @@
 
 .heroButton {
     display: inline-block;
-    padding: .75rem 1.4rem;
+    padding: 0.75rem 1.4rem;
     background: #c0392b;
     color: #fff;
     border-radius: 999px;

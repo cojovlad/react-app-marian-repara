@@ -8,17 +8,22 @@ interface Props {
 }
 
 const PricingHero: React.FC<Props> = ({
-                                                 imageUrl = "/assets/images/display1SIX.JPG",
-                                                 title = "PREȚURI & PROCESE",
-                                             }) => {
+                                          imageUrl = "/assets/images/display1SIX.JPG",
+                                          title = "PREȚURI & PROCESE",
+                                      }) => {
     return (
-        <section className={styles.heroSnippet} aria-labelledby="pricing-title">
-            <img src={imageUrl} alt="Prețuri și proces" className={styles.heroImage}/>
+        <section
+            className={styles.heroSnippet}
+            aria-labelledby="pricing-title"
+            style={{backgroundImage: `url(${imageUrl})`}}
+        >
             <div className={styles.heroOverlay}>
-                <h2 id="pricing-title" className={styles.heroTitle}>{title}</h2>
+                <h2 id="pricing-title" className={styles.heroTitle}>
+                    {title}
+                </h2>
                 <p className={styles.heroSubtitle}>
-                    La Marian primești devize clare, costuri fixe justificate și o procedură simplă: evaluare, ofertă,
-                    programare și execuţie.
+                    La Marian primești devize clare, costuri fixe justificate și o
+                    procedură simplă: evaluare, ofertă, programare și execuţie.
                 </p>
             </div>
         </section>
