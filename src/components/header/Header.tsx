@@ -1,12 +1,20 @@
+// Header.tsx
 import React from "react";
-import {Link} from "react-router-dom";
 import styles from "./Header.module.css";
+import {Link} from "react-router-dom";
 
 interface HeaderProps {
-    pages: Array<{ title: string; path: string }>;
+    pages: Array<{ title: string; id: string }>;
 }
 
-const Header: React.FC<HeaderProps> = ({pages}) => {
+const Header: React.FC<HeaderProps> = ({ pages }) => {
+    const scrollToSection = (id: string) => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <header className={styles.header}>
             <Link to="/">
@@ -19,9 +27,13 @@ const Header: React.FC<HeaderProps> = ({pages}) => {
 
             <nav className={styles.nav}>
                 {pages.map((page, index) => (
-                    <a key={index} href={page.path} className={styles.navLink}>
+                    <button
+                        key={index}
+                        onClick={() => scrollToSection(page.id)}
+                        className={styles.navLink}
+                    >
                         {page.title}
-                    </a>
+                    </button>
                 ))}
             </nav>
         </header>
