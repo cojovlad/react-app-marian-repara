@@ -1,23 +1,68 @@
-// Header.tsx
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface HeaderProps {
     pages: Array<{ title: string; id: string }>;
 }
 
 const Header: React.FC<HeaderProps> = ({ pages }) => {
+    const [open, setOpen] = useState(false);
+    const [scrolling, setScrolling] = useState(false);
+    const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const toggle = () => setOpen((v) => !v);
+    const close = () => setOpen(false);
+
+    // prevent background scroll when menu open
+    useEffect(() => {
+        document.body.style.overflow = open ? "hidden" : "";
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [open]);
+
+    // close on ESC
+    useEffect(() => {
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") close();
+        };
+        window.addEventListener("keydown", onKey);
+        return () => window.removeEventListener("keydown", onKey);
+    }, []);
+
+    // detect scroll activity
+    useEffect(() => {
+        const onScroll = () => {
+            setScrolling(true);
+            if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+            scrollTimeout.current = setTimeout(() => {
+                setScrolling(false);
+            }, 300); // blur disappears 0.3s after scroll stops
+        };
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+            if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+        };
+    }, []);
+
     const scrollToSection = (id: string) => {
         const el = document.getElementById(id);
         if (el) {
+            close();
             el.scrollIntoView({ behavior: "smooth" });
         }
     };
 
     return (
-        <header className={styles.header}>
-            <Link to="/">
+        <header className={`${styles.header} ${scrolling ? styles.scrolling : ""}`}>
+            <Link
+                to="/"
+                className={styles.logoLink}
+                onClick={() => scrollToSection("home")}
+            >
                 <img
                     className={styles.logo}
                     src="assets/images/img.png"
@@ -25,17 +70,59 @@ const Header: React.FC<HeaderProps> = ({ pages }) => {
                 />
             </Link>
 
-            <nav className={styles.nav}>
-                {pages.map((page, index) => (
-                    <button
-                        key={index}
-                        onClick={() => scrollToSection(page.id)}
-                        className={styles.navLink}
-                    >
-                        {page.title}
-                    </button>
-                ))}
+            <nav className={styles.nav} aria-label="Main navigation">
+                <div className={styles.desktopNav}>
+                    {pages.map((page, index) => (
+                        <button
+                            key={index}
+                            onClick={() => scrollToSection(page.id)}
+                            className={styles.navLink}
+                        >
+                            {page.title}
+                        </button>
+                    ))}
+                </div>
+
+                <button
+                    className={`${styles.hamburger} ${open ? "open" : ""}`}
+                    aria-controls="mobile-menu"
+                    aria-expanded={open}
+                    onClick={toggle}
+                    aria-label={open ? "Închide meniul" : "Deschide meniul"}
+                >
+                    <pre>
+                        <span className={styles.bar} />
+                    <span className={styles.bar} />
+                    <span className={styles.bar} />
+                    </pre>
+
+                </button>
             </nav>
+
+            <div
+                id="mobile-menu"
+                className={`${styles.mobileMenu} ${open ? styles.open : ""}`}
+                role="dialog"
+                aria-modal="true"
+                aria-hidden={!open}
+            >
+                <button className={styles.closeBtn} onClick={close} aria-label="Închide meniul">
+                    ✕
+                </button>
+
+                <ul className={styles.mobileNavList}>
+                    {pages.map((page, idx) => (
+                        <li key={idx}>
+                            <button
+                                onClick={() => scrollToSection(page.id)}
+                                className={styles.mobileNavLink}
+                            >
+                                {page.title}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </header>
     );
 };
