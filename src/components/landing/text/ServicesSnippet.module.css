@@ -1,3 +1,4 @@
+/* ServicesSnippet.module.css */
 .servicesSnippet {
     padding: 2rem 1.5rem;
     max-width: 1100px;
@@ -147,7 +148,6 @@
     margin-bottom: 0.35rem;
 }
 
-/* responsive: collapse to 1 column */
 @media (max-width: 900px) {
     .servicesGrid {
         grid-template-columns: 1fr;
@@ -155,5 +155,24 @@
 
     .overlayContent {
         padding: 1rem;
+        margin: 1rem;
+    }
+
+    .servicesSnippet {
+        padding: 1.5rem 1rem;
+    }
+
+    .servicesPreview {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay {
+        padding: 1rem;
+    }
+
+    .servicesGrid ul ul {
+        padding-left: 0.8rem;
     }
 }

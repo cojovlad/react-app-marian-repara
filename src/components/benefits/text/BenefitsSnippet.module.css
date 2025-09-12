@@ -1,3 +1,4 @@
+/* BenefitsSnippet.module.css */
 .benefitsSnippet {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -60,4 +61,18 @@
     text-decoration: none;
     font-weight: 600;
     width: auto;
+}
+
+@media (max-width: 768px) {
+    .benefitsSnippet {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+    }
+
+    .right {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #eee;
+    }
 }

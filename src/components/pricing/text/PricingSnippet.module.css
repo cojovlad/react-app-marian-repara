@@ -1,3 +1,4 @@
+/* PricingSnippet.module.css */
 .pricingSnippet {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -75,4 +76,23 @@
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .pricingSnippet {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+    }
+
+    .right {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #eee;
+    }
+
+    .summary li {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
 }

@@ -1,3 +1,4 @@
+/* ServiceAreaHero.module.css */
 .heroSnippet {
     position: relative;
     width: 100%;
@@ -43,4 +44,24 @@
     line-height: 1.5;
     font-size: 1.05rem;
     opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+    .heroSnippet {
+        height: 320px;
+        background-attachment: scroll;
+    }
+
+    .heroTitle {
+        font-size: 1.8rem;
+    }
+
+    .heroSubtitle {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+    }
+
+    .heroOverlay {
+        padding: 1rem;
+    }
 }

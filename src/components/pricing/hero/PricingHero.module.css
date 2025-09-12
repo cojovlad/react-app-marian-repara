@@ -1,3 +1,4 @@
+/* PricingHero.module.css */
 .heroSnippet {
     position: relative;
     width: 100%;
@@ -54,4 +55,24 @@
     border-radius: 999px;
     text-decoration: none;
     font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .heroSnippet {
+        height: 320px;
+        background-attachment: scroll;
+    }
+
+    .heroTitle {
+        font-size: 1.8rem;
+    }
+
+    .heroSubtitle {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+    }
+
+    .heroOverlay {
+        padding: 1rem;
+    }
 }

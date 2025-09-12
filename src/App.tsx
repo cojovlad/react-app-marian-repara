@@ -23,23 +23,23 @@ interface SnippetData {
 
 const App: React.FC = () => {
     const pages = [
-        { title: "Acasă", id: "home" },
-        { title: "Beneficii", id: "benefits" },
-        { title: "Acoperire", id: "services" },
-        { title: "Preturi", id: "pricing" },
+        {title: "Acasă", id: "home"},
+        {title: "Beneficii", id: "benefits"},
+        {title: "Acoperire", id: "services"},
+        {title: "Preturi", id: "pricing"},
     ];
 
     return (
         <div className="app">
             <main className="main-content">
-                <Header pages={pages} />
+                <Header pages={pages}/>
 
                 {/* Home */}
                 <section id="home">
                     {featuredSnippets.map((snippet: SnippetData, index: number) => (
                         <LandingHero key={index} {...snippet} />
                     ))}
-                    <ServicesSnippet />
+                    <ServicesSnippet/>
                 </section>
 
                 {/* Benefits */}
@@ -47,23 +47,23 @@ const App: React.FC = () => {
                     {whyChooseMarianSnippet.map((snippet: SnippetData, index: number) => (
                         <BenefitsHero key={index} {...snippet} />
                     ))}
-                    <BenefitsSnippet />
+                    <BenefitsSnippet/>
                 </section>
 
                 {/* Services */}
                 <section id="services">
-                    <ServiceAreaHero />
-                    <ServiceAreaSnippet />
+                    <ServiceAreaHero/>
+                    <ServiceAreaSnippet/>
                 </section>
 
                 {/* Pricing */}
                 <section id="pricing">
-                    <PricingHero />
-                    <PricingSnippet />
+                    <PricingHero/>
+                    <PricingSnippet/>
                 </section>
             </main>
 
-            <Footer />
+            <Footer/>
         </div>
     );
 };

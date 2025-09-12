@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import styles from "./Header.module.css";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 interface HeaderProps {
     pages: Array<{ title: string; id: string }>;
 }
 
-const Header: React.FC<HeaderProps> = ({ pages }) => {
+const Header: React.FC<HeaderProps> = ({pages}) => {
     const [open, setOpen] = useState(false);
     const [scrolling, setScrolling] = useState(false);
     const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ pages }) => {
             }, 300); // blur disappears 0.3s after scroll stops
         };
 
-        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("scroll", onScroll, {passive: true});
         return () => {
             window.removeEventListener("scroll", onScroll);
             if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
@@ -52,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ pages }) => {
         const el = document.getElementById(id);
         if (el) {
             close();
-            el.scrollIntoView({ behavior: "smooth" });
+            el.scrollIntoView({behavior: "smooth"});
         }
     };
 
@@ -91,9 +91,9 @@ const Header: React.FC<HeaderProps> = ({ pages }) => {
                     aria-label={open ? "Închide meniul" : "Deschide meniul"}
                 >
                     <pre>
-                        <span className={styles.bar} />
-                    <span className={styles.bar} />
-                    <span className={styles.bar} />
+                        <span className={styles.bar}/>
+                    <span className={styles.bar}/>
+                    <span className={styles.bar}/>
                     </pre>
 
                 </button>

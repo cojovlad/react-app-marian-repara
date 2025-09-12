@@ -1,3 +1,4 @@
+/* LandingHero.module.css */
 .landingSnippet {
     position: relative;
     min-height: 100vh;
@@ -57,4 +58,26 @@
 
 .landingButton:hover {
     background-color: #c9302c;
+}
+
+@media (max-width: 768px) {
+    .landingSnippet {
+        min-height: 80vh;
+        padding: 2rem 1rem;
+        background-attachment: scroll;
+    }
+
+    .landingTitle {
+        font-size: 2.2rem;
+    }
+
+    .landingDescription {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .landingButton {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }

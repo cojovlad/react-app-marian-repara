@@ -1,3 +1,4 @@
+/* App.css */
 .app {
     min-height: 100vh;
     display: flex;
@@ -6,4 +7,10 @@
 
 .main-content {
     flex: 1;
+}
+
+@media (max-width: 768px) {
+    .app {
+        overflow-x: hidden;
+    }
 }
