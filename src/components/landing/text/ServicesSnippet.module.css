@@ -170,6 +170,8 @@
 @media (max-width: 480px) {
     .overlay {
         padding: 1rem;
+        position: fixed;
+        z-index: 9999;
     }
 
     .servicesGrid ul ul {
