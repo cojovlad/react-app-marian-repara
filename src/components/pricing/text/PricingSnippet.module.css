@@ -7,35 +7,36 @@
     margin: 0 auto 1.5rem;
     padding: 2rem 1rem;
     align-items: start;
-    background: #fff;
+    background: #111;
+    color: #fff;
     border-radius: 8px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
 .left h2 {
     margin-top: 0;
-    color: #222;
+    color: #fff;
 }
 
 .lead {
-    color: #333;
+    color: #fff;
     margin-bottom: 0.75rem;
     font-weight: 500;
 }
 
 .left h3 {
     margin-bottom: 0.4rem;
-    color: #222;
+    color: #fff;
 }
 
 .list {
     margin: 0.5rem 0 1rem 1rem;
-    color: #333;
+    color: #fff;
 }
 
 .process {
     margin-left: 1rem;
-    color: #333;
+    color: #fff;
     margin-bottom: 0;
 }
 
@@ -45,13 +46,13 @@
 
 .right h3 {
     margin-top: 0;
-    color: #222;
+    color: #fff;
 }
 
 .summary {
     list-style: none;
     padding-left: 0;
-    color: #333;
+    color: #fff;
     margin-bottom: 0.75rem;
 }
 
