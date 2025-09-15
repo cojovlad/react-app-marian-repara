@@ -3,6 +3,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: #1a1a1a;
 }
 
 .main-content {
