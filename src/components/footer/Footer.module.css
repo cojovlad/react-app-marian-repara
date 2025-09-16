@@ -20,11 +20,10 @@
 .contact {
     margin-top: 0.5rem;
     font-size: 0.9rem;
-    color: #aaa;
 }
 
 .contact a {
-    color: inherit;
+    color: #007bff;
     text-decoration: none;
     margin: 0 0.25rem;
 }
