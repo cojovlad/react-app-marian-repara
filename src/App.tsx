@@ -27,6 +27,7 @@ const App: React.FC = () => {
         {title: "Beneficii", id: "benefits"},
         {title: "Acoperire", id: "services"},
         {title: "Preturi", id: "pricing"},
+        {title:"Contact", id: "contact"}
     ];
 
     return (
