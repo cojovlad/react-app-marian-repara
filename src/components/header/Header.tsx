@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = ({pages}) => {
     const [open, setOpen] = useState(false);
     const [scrolling, setScrolling] = useState(false);
 
-    // NEW: state for contact overlay
+    //state for contact overlay
     const [showContact, setShowContact] = useState(false);
     const overlayRef = useRef<HTMLDivElement | null>(null);
     const closeBtnRef = useRef<HTMLButtonElement | null>(null);
@@ -149,8 +149,6 @@ const Header: React.FC<HeaderProps> = ({pages}) => {
                     ))}
                 </ul>
             </div>
-
-            {/* Contact Overlay */}
             {showContact && (
                 <div
                     ref={overlayRef}
@@ -175,11 +173,22 @@ const Header: React.FC<HeaderProps> = ({pages}) => {
                         <h2 id="contact-title">Contact</h2>
 
                         <div className={styles.contactInfo}>
-                            <p><strong>Telefon:</strong> <a href="tel:+40712345678">+40 712 345 678</a></p>
-                            <p><strong>Email:</strong> <a href="mailto:marian@example.com">marian@example.com</a></p>
-                            <p><strong>Adresă:</strong> Strada Exemplu 123, București</p>
-                            <p><strong>Program:</strong> Luni - Vineri, 09:00 - 18:00</p>
+                            <p>
+                                <strong>Telefon:</strong>{" "}
+                                <a href="tel:+40712345678">+40 712 345 678</a>
+                            </p>
+                            <p>
+                                <strong>Email:</strong>{" "}
+                                <a href="mailto:marian@example.com">marian@example.com</a>
+                            </p>
+                            <p>
+                                <strong>Adresă:</strong> Strada Exemplu 123, București
+                            </p>
+                            <p>
+                                <strong>Program:</strong> Luni - Duminica, 09:00 - 18:00
+                            </p>
                         </div>
+
                     </div>
                 </div>
             )}
